@@ -1,0 +1,44 @@
+.weatherContainer {
+    background-color: #f2f2f2;
+    background-image: url('/weather-container-bg.jpg');
+    background-size: cover;
+    border: #c0c0c0 solid 1px;
+    box-shadow: 0 3px 15px #909090;
+    display: flex;
+    flex-direction: column;
+    max-width: 924px;
+    min-height: 382px;
+    overflow: hidden;
+    padding: 1em;
+    position: relative;
+    text-align: center;
+}
+
+.weatherContainer__heading {
+    color: #222222;
+    margin-top: 0;
+}
+
+.weatherContainer__controls {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    right: 1em;
+    top: 1em;
+}
+
+.weatherContainer__city_select {
+    margin-right: .3em;
+}
+
+.weatherContainer__city_select,
+.weatherContainer__temp_change {
+    min-height: 21px;
+    min-width: 26px;
+}
+
+.weatherFiveDay {
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+}
