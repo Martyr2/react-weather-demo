@@ -52,16 +52,21 @@ function WeatherContainer() {
                 const data = await fetchWeatherData(city);
                 const parsedWeatherData = parseWeatherData(data);
     
-                if (parsedWeatherData) {
+                if (!ignore && parsedWeatherData) {
                     setCards(parsedWeatherData);
                 }
             } catch(error) {
-                    console.log("Error getting weather data: ", error);
+                console.log("Error getting weather data: ", error);
             }
         }
 
         hideWeatherCards();
+
+        let ignore = false;
         setupWeatherData();
+        return () => {
+            ignore = true;
+        }
     }, [city]);
 
     useEffect(() => {
